@@ -1,0 +1,14 @@
+server:
+  port: 8081
+  registrycentery: 8761 #服务注册中心端口号
+
+spring:
+  application:
+    name: MicroService01 #服务名，服务名是唯一的，不同的服务名不能重复
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      default-zone: http://localhost:${server.registrycentery}/eureka/		#指定去哪个服务注册中心进行注册

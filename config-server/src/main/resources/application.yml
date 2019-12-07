@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: springcloud-config-server
+  rabbitmq:
+    host: 192.168.223.128
+    port: 5672
+    username: testmq
+    password: testmq
+    virtual-host: testhost
+    connection-timeout: 10000s
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/brightBtat/testgithub.git
+          username: 2421366898@qq.com
+          password: github123456
+          search-paths: demo
+    bus:
+      trace:
+        enabled: true
+      refresh:
+        enabled: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+
+server:
+  port: 9999
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
